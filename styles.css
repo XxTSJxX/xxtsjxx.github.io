@@ -1,0 +1,115 @@
+@font-face {
+    font-family: unifont;
+    src: url(assets/unifont-14.0.01.ttf);
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "unifont", Consolas,monaco,monospace;
+    height: 100%;
+    margin: 0;
+}
+body .banner {
+    position: absolute;
+    font-size: 1vw;
+}
+a:link {
+    color: lawngreen;
+}
+a:visited {
+    color: lawngreen;
+}
+a:hover {
+    color: green;
+}
+.list {
+    position: absolute;
+    right: 1vw;
+    bottom: 0px;
+    font-size: 1.5vw;
+    text-align: right;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    text-align: center;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.container .inner {
+    margin: 0 auto;
+}
+.container .inner .title {
+    font-size: 15em;
+    margin-bottom: 7vh;
+}
+.container .inner .detail {
+    /* text-align: left; */
+    width: 70vw;
+}
+hr {
+    margin-top: 7vh;
+}
+button {
+    font-size: 2em;
+    font-family: "unifont", Consolas,monaco,monospace;
+    height: 2.5em;
+    background-color: black;
+    color: lawngreen;
+    border: 2px solid lawngreen;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.cursor:after {
+    content: "▂";
+
+    -webkit-animation-name: blink;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear, steps(2, end);
+
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-timing-function: linear, steps(2, end);
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Standard syntax */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
