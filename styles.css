@@ -11,8 +11,11 @@ body {
     margin: 0;
 }
 body .banner {
-    position: absolute;
-    font-size: 1vw;
+    top: 0.5vh;
+    left: 0.5vh;
+    position: fixed;
+    font-size: 1.2em;
+    z-index: -1;
 }
 a:link {
     color: lawngreen;
@@ -24,47 +27,117 @@ a:hover {
     color: green;
 }
 .list {
-    position: absolute;
+    position: fixed;
     right: 1vw;
     bottom: 0px;
-    font-size: 1.5vw;
+    font-size: 1.7em;
     text-align: right;
 }
 .container {
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     text-align: center;
     min-height: 100%;
     align-items: center;
     justify-content: center;
 }
+
+.container .content {
+    background-color: rgba(0,0,0,0.6);
+
+    border-style: solid;
+    border-color: #ffffff;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-right-width: 0;
+
+    max-width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
 .container .inner {
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 0 auto;
+    overflow: hidden;
+
+    animation: show;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
+
 .container .inner .title {
-    font-size: 15em;
+    font-size: min(30vh, min(20vw, 10em));
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+
+.container .content .inner .date{
+    font-size: min(4.5vw, 1.8rem);
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+}
+
+.container .content .inner button {
     margin-bottom: 7vh;
+    flex-shrink: 0;
 }
+
 .container .inner .detail {
-    /* text-align: left; */
+    text-align: justify;
     width: 70vw;
+    margin-bottom: 3vh;
 }
-hr {
-    margin-top: 7vh;
+
+.container .inner .detail p {
+    font-size: 1.2rem;
 }
+
+.container .inner .detail ul {
+    padding: 0;
+}
+
+.container .inner .detail ul li {
+    list-style:none;
+    list-style-type: none;
+}
+
+.center {
+    text-align: center;
+}
+
 button {
-    font-size: 2em;
+    font-size: min(7vh, min(6vw, 2em));
     font-family: "unifont", Consolas,monaco,monospace;
     height: 2.5em;
     background-color: black;
     color: lawngreen;
     border: 2px solid lawngreen;
     transition-duration: 0.4s;
-    cursor: pointer;
 }
 button:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
+    cursor: pointer;
+}
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #afafaf;
+    color: white;
+    cursor: not-allowed;
+}
+
+@keyframes show {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 100vh;
+    }
 }
 
 .cursor:after {
