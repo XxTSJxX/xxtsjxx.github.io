@@ -17,6 +17,9 @@ body .banner {
     font-size: 1.2em;
     z-index: -1;
 }
+body .banner.home {
+    z-index: 0;
+}
 a:link {
     color: lawngreen;
 }
