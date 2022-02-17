@@ -1,6 +1,7 @@
 @font-face {
     font-family: unifont;
-    src: url(assets/unifont-14.0.01.ttf);
+    src: url(assets/unifont-14.0.01.woff) format("woff"),
+         url(assets/unifont-14.0.01.ttf) format("truetype");
 }
 
 body {
